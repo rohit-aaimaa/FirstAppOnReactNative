@@ -1,9 +1,9 @@
-import SplashScreen from './SplashScreen'
 import HomeScreen from './HomeScreen'
 import LoginScreen from './LoginScreen'
+import DashboardScreen from './DashboardScreen'
 
 export {
-    SplashScreen,
     HomeScreen,
-    LoginScreen
+    LoginScreen,
+    DashboardScreen
 }

@@ -1,22 +1,13 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet, AsyncStorage, Button } from 'react-native'
+import { View, Text, StyleSheet, Button } from 'react-native'
 
-class HomeScreen extends Component {
-
-    componentDidMount() {
-        if(AsyncStorage.getItem('user_name')){
-            this.props.navigation.navigate('Dashboard')
-        } else {
-            this.props.navigation.navigate('Login')
-        }
-    }
+class DashboardScreen extends Component {
     
     render(){
         return (
             <View style={styles.container}>
                 <View style={styles.welcome}>
-                    <Text style={styles.text}>Welcome to My First React Native App.</Text>
-                    <Button onPress={() => this.props.navigation.navigate('Login')} title='Login to continue' />
+                    <Text style={styles.text}>You're successfully logged in. Have fun with the app.</Text>
                 </View>
             </View>
         )
@@ -42,4 +33,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default HomeScreen
+export default DashboardScreen

@@ -1,26 +1,24 @@
 import { StackNavigator } from "react-navigation";
 import { Platform } from "react-native";
 
-import { SplashScreen, HomeScreen, LoginScreen } from "./screens";
+import { HomeScreen, LoginScreen, DashboardScreen } from "./screens";
 const ReactNavigator = StackNavigator({
-    Splash: {
-        screen: SplashScreen,
-        navigationOptions: {
-            header: false
-        }
-    },
     Home: {
         screen: HomeScreen,
         navigationOptions: {
-            title: 'Home',
-            headerLeft: false
+            title: 'Home'
         }
     },
     Login: {
         screen: LoginScreen,
         navigationOptions: {
-            title: 'Login',
-            headerLeft: false
+            title: 'Login'
+        }
+    },
+    Dashboard: {
+        screen: DashboardScreen,
+        navigationOptions: {
+            title: 'Dashboard'
         }
     }
 }
