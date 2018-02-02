@@ -1,11 +1,32 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, Button, StyleSheet } from 'react-native'
+
+import { facebook, google } from '../config.js'
 
 class LoginScreen extends Component {
+    state = {
+        fbData: {
+
+        },
+        googleData: {
+
+        }
+    }
+
+    facebookLogin = () => {
+
+    }
+
+    googleLogin = () => {
+
+    }
+
     render(){
         return (
             <View style={styles.container}>
-                <Text>Home Screen</Text>
+                <Text>Login Form</Text>
+                <Button title='Facebook' onPress={this.facebookLogin} />
+                <Button title='Google' onPress={this.googleLogin} />
             </View>
         )
     }
