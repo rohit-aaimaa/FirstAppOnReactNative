@@ -2,21 +2,23 @@ import React, { Component } from 'react'
 import { View, Text, StyleSheet, AsyncStorage, Button } from 'react-native'
 
 class HomeScreen extends Component {
-
-    componentDidMount() {
-        if(AsyncStorage.getItem('user_name')){
-            this.props.navigation.navigate('Dashboard')
-        } else {
-            this.props.navigation.navigate('Login')
-        }
-    }
     
     render(){
         return (
             <View style={styles.container}>
                 <View style={styles.welcome}>
                     <Text style={styles.text}>Welcome to My First React Native App.</Text>
-                    <Button onPress={() => this.props.navigation.navigate('Login')} title='Login to continue' />
+                    { !AsyncStorage.getItem('user_name') ? (
+                        <View>
+                            <Text>You are already logged in. Please visit </Text>
+                            <Button onPress={() => this.props.navigation.navigate('Login')} title='Login to continue' />
+                        </View>
+                    ) : (
+                        <View>
+                            <Text>You are already logged in. Please visit </Text>
+                            <Button onPress={() => this.props.navigation.navigate('Dashboard')} title="Dashboard" />
+                        </View>
+                    )}
                 </View>
             </View>
         )

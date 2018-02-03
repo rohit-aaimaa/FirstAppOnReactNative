@@ -4,6 +4,7 @@
     "splash": {
       "image": "https://via.placeholder.com/400x700",
       "resizeMode": "cover"
-    }
+    },
+    "orientation": "portrait"
   }
 }

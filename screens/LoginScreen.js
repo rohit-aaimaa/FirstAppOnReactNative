@@ -6,15 +6,11 @@ import Expo from "expo";
 import { facebook, google } from '../config.js'
 
 class LoginScreen extends Component {
-    state = {
-        fbData: {
-
-        },
-        googleData: {
-
-        }
+   
+    state={
+        fbData: {}
     }
-
+    
     facebookLogin = async () => {
         const {type, token} = await Expo.Facebook.logInWithReadPermissionsAsync(facebook.clientID, {
             permissions: ['public_profile', 'user_friends', 'email', 'user_birthday']
@@ -27,7 +23,7 @@ class LoginScreen extends Component {
                 AsyncStorage.setItem('user_name', user.name)
                 AsyncStorage.setItem('user_email', user.email)
                 AsyncStorage.setItem('user_birthday', user.birthday)
-                this.props.navigation.navigate('Dashboard')
+                this.props.navigation.navigate('Home')
             })
         }
     }
