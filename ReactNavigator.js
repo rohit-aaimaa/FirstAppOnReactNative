@@ -2,38 +2,65 @@ import { StackNavigator } from "react-navigation";
 import { Platform } from "react-native";
 
 import { DrawerScreen } from "./navigators";
-import { HomeScreen, LoginScreen, DashboardScreen, ProfileScreen } from './screens'
+import { 
+    LoginScreen, 
+    DashboardScreen, 
+    ProfileScreen,
+    NeedHelpScreen, 
+    ShareScreen,
+    RateUsScreen,
+    AboutUsScreen,
+    AboutThisReleaseScreen } from './screens'
 
 const ReactNavigator = StackNavigator({
-    Home: {
-        screen: HomeScreen,
-        navigationOptions: {
-            path: '/',
-            title: 'Home'
-        }
+    Drawer: {
+        screen: DrawerScreen
     },
     Login: {
         screen: LoginScreen,
         navigationOptions: {
-            path: '/login',
             title: 'Login'
         }
     },
     Dashboard: {
         screen: DashboardScreen,
         navigationOptions: {
-            path: '/dashboard',
             title: 'Dashboard'
         }
     },
-    Drawer: {
-        screen: DrawerScreen
+    NeedHelp: {
+        screen: NeedHelpScreen,
+        navigationOptions: {
+            title: 'Neep Help'
+        }
+    },
+    Share: {
+        screen: ShareScreen,
+        navigationOptions: {
+            title: 'Share'
+        }
+    },
+    RateUs: {
+        screen: RateUsScreen,
+        navigationOptions: {
+            title: 'Rate Us'
+        }
+    },
+    AboutUs: {
+        screen: AboutUsScreen,
+        navigationOptions: {
+            title: 'About Us'
+        }
+    },
+    AboutThisRelease: {
+        screen: AboutThisReleaseScreen,
+        navigationOptions: {
+            title: 'About this release'
+        }
     }
 },
 {
-    initialRouteName: 'Home',
-    // headerMode: 'none',
-    // mode: Platform.OS === 'ios' ? 'modal' : 'card' 
+    initialRouteName: 'Drawer' 
 }
 )
 

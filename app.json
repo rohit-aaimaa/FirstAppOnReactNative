@@ -2,7 +2,7 @@
   "expo": {
     "sdkVersion": "25.0.0",
     "splash": {
-      "image": "https://via.placeholder.com/400x700",
+      "image": "./assets/images/splash.png",
       "resizeMode": "cover"
     },
     "orientation": "portrait"

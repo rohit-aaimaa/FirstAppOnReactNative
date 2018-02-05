@@ -1,12 +1,20 @@
 import React, { Component } from 'react'
 import { View, Text, Button, AsyncStorage, StyleSheet } from 'react-native'
+import { NavigateActions } from 'react-navigation'
+import Reactotron from 'reactotron-react-native'
 import axios from "axios";
 import Expo from "expo";
 
 import { facebook, google } from '../config.js'
 
 class LoginScreen extends Component {
-   
+    navigateToScreen = (route) => () => {
+        const navigateAction = NavigateActions.navigate({
+          routeName: route
+        })
+        this.props.navigation.dispatch(navigateAction)
+    }
+
     state={
         fbData: {}
     }
@@ -17,14 +25,11 @@ class LoginScreen extends Component {
         })
 
         if( type === 'success'){
-            axios.get(`https://graph.facebook.com/me?access_token=${token}`)
-            .then(res => res.data)
-            .then(user => {
-                AsyncStorage.setItem('user_name', user.name)
-                AsyncStorage.setItem('user_email', user.email)
-                AsyncStorage.setItem('user_birthday', user.birthday)
-                this.props.navigation.navigate('Home')
-            })
+            const res = await axios.get(`https://graph.facebook.com/me?access_token=${token}`)
+            const user = await res.data
+            await AsyncStorage.setItem('user_name', user.name)
+            this.setState({fbData: user})
+            this.navigateToScreen('Drawer')
         }
     }
 
