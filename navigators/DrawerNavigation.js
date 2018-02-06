@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 import { DrawerNavigator } from "react-navigation";
 import { View } from 'react-native'
 
-import { 
-    HomeScreen,
-    SidebarScreen } from '../screens'
+import { SidebarScreen } from '../screens'
+import { HomeScreen } from '../src/screens'
 
 const DrawerNavigation = DrawerNavigator({
     Home: {
