@@ -5,13 +5,13 @@ export const CardWrapper = styled.View`
   padding: 10px;
   margin: 10px;
   width: 80%;
-  backgroundColor: #fff;
+  backgroundcolor: #fff;
 `
 
 export const CardTitle = styled.View`
   flex: 0.1;
-  justifyContent: center;
-  alignItems: center;
+  justifycontent: center;
+  alignitems: center;
 `
 
 export const CardTitleText = styled.Text`
@@ -21,14 +21,14 @@ export const CardTitleText = styled.Text`
 
 export const CardBody = styled.Text`
   flex: 0.8;
-  backgroundColor: #970;
+  backgroundcolor: #970;
   padding: 10px;
   color: white;
 `
 
 export const CardFooter = styled.View`
   flex: 0.2;
-  flexDirection: row;
-  justifyContent: flex-end;
-  alignItems: center;
+  flexdirection: row;
+  justifycontent: flex-end;
+  alignitems: center;
 `
